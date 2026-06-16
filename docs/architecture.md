@@ -1,23 +1,8 @@
 # PacketAlchemy Nexus Architecture
 
-## Overview
+## High-Level Architecture
 
-PacketAlchemy Nexus is an edge engineering platform built on Cloudflare Workers.
-
-### Core Components
-
-- DNS
-- Cloudflare Edge
-- Workers
-- Security Layer
-- Origin Services
-
----
-
-## High-Level Flow
-
-Client → DNS → Cloudflare Edge → Worker → Origin
-
+```text
 ┌──────────────┐
 │    Client    │
 └──────┬───────┘
@@ -42,3 +27,16 @@ Client → DNS → Cloudflare Edge → Worker → Origin
 ┌──────────────┐
 │   Origin     │
 └──────────────┘
+```
+
+## Core Components
+
+- DNS Resolution
+- Cloudflare Edge
+- Worker Logic
+- Security Controls
+- Origin Services
+
+## Goal
+
+Provide routing, security and automation at the edge.
