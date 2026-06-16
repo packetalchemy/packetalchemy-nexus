@@ -97,8 +97,6 @@ Examples:
 
 ## 👤 Author
 
-Reza Reyhanian
-
 PacketAlchemy
 
 Telecom Core Engineering • EPC • 5G Core • Cloudflare Edge Systems
