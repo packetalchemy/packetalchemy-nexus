@@ -1,3 +1,13 @@
+<p align="center">
+  <img src="assets/logo.png" width="220">
+</p>
+
+<h1 align="center">PacketAlchemy Nexus</h1>
+
+<p align="center">
+Where Packets Become Intelligence
+</p>
+
 # PacketAlchemy Nexus
 
 > Where Packets Become Intelligence
