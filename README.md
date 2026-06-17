@@ -5,29 +5,31 @@
 <h1 align="center">PacketAlchemy Nexus</h1>
 
 <p align="center">
-Where Packets Become Intelligence
-</p>
-
-# PacketAlchemy Nexus
-
 > Where Packets Become Intelligence
-
-Cloudflare Edge Engineering Platform focused on routing, security, automation and operational visibility.
+</p>
 
 ---
 
-## ☁️ Overview
+## 🌐 Overview
 
-PacketAlchemy Nexus is a Cloudflare Worker-based platform designed from a network engineering perspective.
+PacketAlchemy Nexus is an edge networking platform built on Cloudflare Workers that enables intelligent routing, protocol gateways, DNS optimization, security enforcement, and network observability at the edge.
 
-The goal is to understand and build:
+It is designed from a network engineering perspective, mapping modern edge computing concepts to traditional telecom core network principles.
 
-- Edge Computing
-- Cloudflare Workers
-- DNS-based Routing
-- Security Enforcement
-- Traffic Engineering
-- Automation Workflows
+---
+
+## ☁️ Core Vision
+
+Nexus is not just a proxy or tunnel tool.
+
+It is a **Cloud Edge Network Intelligence Platform** that aims to:
+
+- Control and optimize traffic at the edge
+- Provide protocol abstraction (VLESS, Trojan, HTTP, WebSocket)
+- Enable intelligent routing decisions
+- Improve visibility of network behavior
+- Apply security policies at edge level
+- Simulate telecom-grade traffic engineering concepts
 
 ---
 
@@ -36,71 +38,18 @@ The goal is to understand and build:
 ```text
 Client
    ↓
-DNS Resolution
+DNS / DoH Layer
    ↓
-Cloudflare Edge
+Cloudflare Edge (Worker Runtime)
    ↓
-Worker Logic
+┌─────────────────────────────────────┐
+│        Nexus Core Engine            │
+│-------------------------------------│
+│  • Protocol Gateway (VLESS/Trojan)  │
+│  • Routing Engine                   │
+│  • Security Layer                   │
+│  • Observability Module            │
+│  • Policy Controller               │
+└─────────────────────────────────────┘
    ↓
-Origin Services
-```
-
----
-
-## 📚 Documentation
-
-### Core Concepts
-
-- Architecture Overview
-- Worker Request Flow
-- Cloudflare Routing
-- Telecom Mapping
-
-Documentation can be found in the `/docs` directory.
-
----
-
-## 🔥 Telecom Engineering Perspective
-
-One of the unique goals of this project is to map cloud edge systems to telecom core concepts.
-
-Examples:
-
-| Cloudflare | Telecom |
-|------------|----------|
-| DNS | APN / DNN Resolution |
-| Worker | Policy Logic |
-| WAF | Firewall / DPI |
-| Load Balancer | Traffic Steering |
-| Analytics | Charging & Monitoring |
-
----
-
-## 🚀 Current Roadmap
-
-### Phase 1
-- Repository Foundation
-- Documentation
-- Architecture Design
-
-### Phase 2
-- Worker Development
-- Request Processing
-- Security Features
-
-### Phase 3
-- GitHub Integration
-- Automation Workflows
-- Advanced Routing
-
----
-
-## 👤 Author
-
-PacketAlchemy
-
-Telecom Core Engineering • EPC • 5G Core • Cloudflare Edge Systems
-
----
-
-> Where Packets Become Intelligence
+Upstream Services / Origins / Peers
