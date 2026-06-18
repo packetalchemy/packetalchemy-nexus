@@ -1,22 +1,6 @@
 name = "packetalchemy-nexus"
 main = "src/worker.js"
-compatibility_date = "2024-01-01"
+compatibility_date = "2026-06-19"
 
-# Environment variables
-[vars]
-ENVIRONMENT = "production"
-LOG_LEVEL = "info"
-
-# D1 Database (KV store for config, users, usage)
-[[d1_databases]]
-binding = "PA_DB"
-database_name = "packetalchemy-db"
-database_id = "YOUR_D1_DATABASE_ID"
-
-# Secrets (set via: wrangler secret put MASTER_KEY)
-# MASTER_KEY = "set-via-wrangler-secret-put"
-# TG_TOKEN = "set-via-wrangler-secret-put"
-
-# Dev environment
-[env.dev]
-name = "packetalchemy-nexus-dev"
+[observability]
+enabled = true
