@@ -5,14 +5,11 @@ export default {
     if (url.pathname === "/health") {
       return Response.json({
         status: "ok",
-        project: "PacketAlchemy Nexus",
-        version: "0.1.0-alpha",
-        timestamp: new Date().toISOString()
+        service: "PacketAlchemy Nexus",
+        version: "0.1.0-alpha"
       });
     }
 
-    return new Response("PacketAlchemy Nexus", {
-      status: 200
-    });
+    return new Response("Nexus Edge Online", { status: 200 });
   }
 };
