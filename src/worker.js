@@ -2,6 +2,7 @@ import { routeRequest } from "./routing/router";
 import { dispatchProtocol } from "./protocols";
 import { track } from "./observability/analytics";
 import { config } from "./config/config";
+import { getMetrics } from "./observability/metrics";
 
 export default {
   async fetch(request) {
@@ -18,7 +19,8 @@ export default {
         status: "ok",
         service: config.project,
         version: config.version,
-        protocols: config.protocols
+        protocols: config.protocols,
+        metrics: getMetrics()
       });
     }
 
