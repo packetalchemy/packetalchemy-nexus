@@ -1,15 +1,36 @@
+import { routeRequest } from "./routing/router";
+import { dispatchProtocol } from "./protocols";
+import { track } from "./analytics/analytics";
+
 export default {
   async fetch(request) {
-    const url = new URL(request.url);
+    const start = Date.now();
 
-    if (url.pathname === "/health") {
+    const route = routeRequest(request);
+
+    track("request", {
+      route
+    });
+
+    if (route === "health") {
       return Response.json({
         status: "ok",
         service: "PacketAlchemy Nexus",
-        version: "0.1.0-alpha"
+        version: "0.2.0-dev"
       });
     }
 
-    return new Response("Nexus Edge Online", { status: 200 });
+    const protocolResponse =
+      await dispatchProtocol(route, request);
+
+    if (protocolResponse) {
+      return protocolResponse;
+    }
+
+    track("latency", {
+      ms: Date.now() - start
+    });
+
+    return new Response("Nexus Edge Online");
   }
 };
