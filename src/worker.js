@@ -1,6 +1,7 @@
 import { routeRequest } from "./routing/router";
 import { dispatchProtocol } from "./protocols";
-import { track } from "./analytics/analytics";
+import { track } from "./observability/analytics";
+import { config } from "./config/config";
 
 export default {
   async fetch(request) {
@@ -15,8 +16,9 @@ export default {
     if (route === "health") {
       return Response.json({
         status: "ok",
-        service: "PacketAlchemy Nexus",
-        version: "0.2.0-dev"
+        service: config.project,
+        version: config.version,
+        protocols: config.protocols
       });
     }
 
