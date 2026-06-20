@@ -2,10 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0-alpha]
+## ## [0.2.1-dev]
 
 ### Added
-- Repository foundation
-- Initial documentation
-- Cloudflare Worker bootstrap
+
+- Config management
+
+- Routing layer
+
+- Protocol dispatcher
+
 - Health endpoint
+
+- Basic observability
+
