@@ -13,5 +13,9 @@ export function routeRequest(request) {
     return "health";
   }
 
+  if (url.pathname === "/sub") {
+    return "subscription";
+  }
+
   return "default";
 }
