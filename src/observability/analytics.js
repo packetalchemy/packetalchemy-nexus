@@ -1,15 +1,10 @@
 import { incrementRequests } from "./metrics";
+import { log } from "./logger";
 
 export function track(event, data = {}) {
   if (event === "request") {
     incrementRequests();
   }
 
-  console.log(
-    JSON.stringify({
-      event,
-      timestamp: Date.now(),
-      ...data
-    })
-  );
+  log("info", event, data);
 }
